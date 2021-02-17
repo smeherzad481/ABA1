@@ -9,7 +9,7 @@ public class AddressBookApplication {
 
         //simply invokes static methods of the Menu class
         AddressBook ab = new AddressBook();
-        init("/Users/sitara/desktop/AddressBookApplication2/src/com/company/AddressInputDataFile.txt",ab);
+        init("AddressInputDataFile.txt",ab);
         ab.list();
 
 

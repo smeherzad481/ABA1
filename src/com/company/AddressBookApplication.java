@@ -48,8 +48,6 @@ public class AddressBookApplication {
                 System.out.println("Goodbye");//Quitting
             }
         }
-        init("AddressInputDataFile.txt");
-        ab.list();
 
     }
 
@@ -166,7 +164,8 @@ public class AddressBookApplication {
             email= Current_line;
             Current_line = buffered_reader.readLine();
             telephone = Current_line;
-            Current_line = buffered_reader.readLine();
+
+
 
             AddressEntry elements = new AddressEntry(f_name,l_name,street,city,state,zip,email,telephone);
             ab.add(elements);

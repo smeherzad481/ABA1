@@ -74,17 +74,19 @@ public class AddressBookApplication {
         System.out.println("Enter last name for removal:");
         Scanner input = new Scanner(System.in);
         ArrayList<AddressEntry> results= ab.find(input.nextLine());
-        System.out.print("The Following entries have been found, select number of entry you wish to remove:");
         for(int i =0; i< results.size();i++)
         {
             System.out.println(i+1);
             System.out.println(results.get(i).toString());
         }
+        System.out.print("The Following entries have been found, select number of entry you wish to remove:");
         int selection =  input.nextInt();
-        System.out.println("Hit y to remove the following entry or n to return to main menu:");
+
+        System.out.print("Hit y to remove the following entry or n to return to main menu:");
         System.out.println(results.get(selection-1).toString());
+        System.out.print(">");
         char remove;
-        remove = input.nextLine().charAt(0);
+        remove = input.next().charAt(0);
         if(remove =='y')
         {
             ab.remove(results.get(selection-1));
@@ -107,12 +109,14 @@ public class AddressBookApplication {
         Scanner input = new Scanner(System.in);
         String lastName = input.nextLine();
         ArrayList <AddressEntry> results = ab.find(lastName);
-        System.out.print("The following" + input +"entries were found in the address book for a last name starting with: " + lastName);
+        System.out.print("The following entries were found in the address book for a last name starting with: " );
+        System.out.println(results.toString());
         for(int i =0; i< results.size();i++)
         {
             System.out.println(i+1);
             System.out.println(results.get(i).toString());
         }
+
     }
 
     /**
@@ -132,8 +136,18 @@ public class AddressBookApplication {
         item2.setZip(Menu.prompt_Zip(System.in));
         item2.setPhone(Menu.prompt_Telephone(System.in));
         item2.setEmail(Menu.prompt_Email(System.in));
-
         ab.add(item2);
+        System.out.println("\nThank you the following contact has been added to your address book:");
+        System.out.println(item2.getFirstName());
+        System.out.println(item2.getLastName());
+        System.out.println(item2.getStreet());
+        System.out.println(item2.getCity());
+        System.out.println(item2.getState());
+        System.out.println(item2.getZip());
+        System.out.println(item2.getPhone());
+        System.out.println(item2.getEmail());
+
+
     }
 
     /**
@@ -164,12 +178,8 @@ public class AddressBookApplication {
             email= Current_line;
             Current_line = buffered_reader.readLine();
             telephone = Current_line;
-
-
-
             AddressEntry elements = new AddressEntry(f_name,l_name,street,city,state,zip,email,telephone);
             ab.add(elements);
-
         }
 
 

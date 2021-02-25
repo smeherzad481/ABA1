@@ -101,13 +101,15 @@ public class Menu {
      */
     public static char promptMenu()
     {
-        System.out.println("Please enter your selection:");
+        System.out.println("********************************");
+        System.out.println("Please enter your selection:\n");
         System.out.println("a)Loading from File");
         System.out.println("b)Addition");
         System.out.println("c)Removal");
         System.out.println("d)Find");
         System.out.println("e)Listing");
         System.out.println("f)Quit");
+        System.out.println("*********************************");
         Scanner input = new Scanner(System.in);
         return input.nextLine().charAt(0);
 

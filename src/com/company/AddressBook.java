@@ -36,12 +36,13 @@ public class AddressBook {
         ArrayList<AddressEntry> results = new ArrayList<>();
         for(int i = 0; i < elements.size();i++)
         {
-            if(elements.get(i).getLastName().startsWith(lastName))
+            if(elements.get(i).getLastName().toLowerCase().startsWith(lastName.toLowerCase()))
             {
                 results.add(elements.get(i));
             }
 
         }
+        System.out.println(results);
         return results;
     }
 }
